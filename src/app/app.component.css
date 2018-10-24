@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+
+.banner{
+    height: 400px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
