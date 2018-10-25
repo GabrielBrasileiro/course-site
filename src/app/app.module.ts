@@ -7,6 +7,13 @@ import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './common/components/header/header.component';
 import { AppFooterComponent } from './common/components/footer/footer.component';
 
+import { AlertModule } from 'ngx-bootstrap';
+import { ButtonsModule } from 'ngx-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +22,13 @@ import { AppFooterComponent } from './common/components/footer/footer.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    AlertModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
