@@ -10,13 +10,15 @@ import { AppFooterComponent } from './common/components/footer/footer.component'
 import { AppBootstrapModule } from './common/modules/app-bootstrap.module';
 import { AppAngularMaterialModule } from './common/modules/app-angular-material.module';
 import { TabComponent } from './common/components/tab/tab.component';
+import { LoginDialogComponent } from './common/dialogs/login-dialog/login-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppHeaderComponent,
     AppFooterComponent,
-    TabComponent
+    TabComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { TabComponent } from './common/components/tab/tab.component';
     AppAngularMaterialModule,
     AppBootstrapModule
   ],
+  entryComponents: [LoginDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

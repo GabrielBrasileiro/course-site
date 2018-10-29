@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
     imports: [
@@ -11,8 +13,17 @@ import { MatTabsModule } from '@angular/material/tabs';
         BrowserAnimationsModule,
         MatButtonModule,
         MatCheckboxModule,
-        MatTabsModule
+        MatTabsModule,
+        MatDialogModule,
+        MatFormFieldModule
     ],
-    exports: [BrowserAnimationsModule, MatButtonModule, MatCheckboxModule, MatTabsModule]
+    exports: [
+        BrowserAnimationsModule, 
+        MatButtonModule, 
+        MatCheckboxModule, 
+        MatTabsModule, 
+        MatDialogModule,
+        MatFormFieldModule
+    ]
 })
 export class AppAngularMaterialModule { }

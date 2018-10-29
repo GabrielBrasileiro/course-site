@@ -1,12 +1,16 @@
 <mat-toolbar class="header">
-  <span class="logo-name">Site de Cursos</span>
+  <div>
+    <span class="logo-name">Site de Cursos</span>
+  </div>
 
-  <div class="search">
+  <div class="center">
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Search">
     </form>
   </div>
 
-  <button mat-flat-button>Login</button>
+  <div>
+    <button mat-flat-button (click)="openDialog()" class="login-button">Login</button>
+  </div>
 
 </mat-toolbar>

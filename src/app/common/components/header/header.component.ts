@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatDialog, MatDialogConfig } from "@angular/material";
+import { LoginDialogComponent } from '../../dialogs/login-dialog/login-dialog.component';
 
 
 @Component({
@@ -7,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 
-export class AppHeaderComponent implements OnInit {
+export class AppHeaderComponent {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
-  ngOnInit() {
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LoginDialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

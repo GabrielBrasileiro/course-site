@@ -2,9 +2,12 @@
 
 .banner{
     height: 400px;
-    font-family: 'Montserrat';
     font-weight: 500;
     position: relative;
+}
+
+.font {
+    font-family: 'Montserrat';
 }
 
 .banner-text {
@@ -27,4 +30,10 @@
    margin-left: auto;
    margin-right: auto;
    width: 400px;
+}
+
+.list-course-title {
+    text-align: left;
+    padding-left: 2%;
+    margin-top: 2.5%;
 }
