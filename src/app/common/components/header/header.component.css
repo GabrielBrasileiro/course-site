@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
 
-.container {
+.header {
     font-family: 'Montserrat';
     font-weight: 500;
+    background-color: black;
+}
+
+.search {
+    margin: auto;
+}
+
+.logo-name{
+    color: white;
 }

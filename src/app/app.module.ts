@@ -9,12 +9,14 @@ import { AppFooterComponent } from './common/components/footer/footer.component'
 
 import { AppBootstrapModule } from './common/modules/app-bootstrap.module';
 import { AppAngularMaterialModule } from './common/modules/app-angular-material.module';
+import { TabComponent } from './common/components/tab/tab.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppHeaderComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    TabComponent
   ],
   imports: [
     BrowserModule,

@@ -4,4 +4,27 @@
     height: 400px;
     font-family: 'Montserrat';
     font-weight: 500;
+    position: relative;
+}
+
+.banner-text {
+    text-align: center;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+  
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+  
+.inner {
+   margin-left: auto;
+   margin-right: auto;
+   width: 400px;
 }
