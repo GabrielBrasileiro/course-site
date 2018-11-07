@@ -13,6 +13,10 @@ import { AppFirebaseModule } from './common/modules/app-firebase.module';
 
 import { TabComponent } from './common/components/tab/tab.component';
 import { LoginDialogComponent } from './common/dialogs/login-dialog/login-dialog.component';
+import { MycoursesComponent } from './common/components/mycourses/mycourses.component';
+import { NotFoundComponent } from './common/components/not-found/not-found.component';
+import { SubBannerComponent } from './common/components/sub-banner/sub-banner.component';
+import { BodyComponent } from './common/components/body/body.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { LoginDialogComponent } from './common/dialogs/login-dialog/login-dialog
     AppHeaderComponent,
     AppFooterComponent,
     TabComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    MycoursesComponent,
+    NotFoundComponent,
+    SubBannerComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,

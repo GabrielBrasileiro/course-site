@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+
+.banner{
+    height: 400px;
+    font-weight: 500;
+    position: relative;
+}
+
+.font {
+    font-family: 'Montserrat';
+}
+
+.banner-text {
+    text-align: center;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+  
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+  
+.inner {
+   margin-left: auto;
+   margin-right: auto;
+   width: 400px;
+}
+
+.list-course-title {
+    text-align: left;
+    padding-left: 2%;
+    margin-top: 2.5%;
+}
