@@ -17,6 +17,7 @@ import { MycoursesComponent } from './common/components/mycourses/mycourses.comp
 import { NotFoundComponent } from './common/components/not-found/not-found.component';
 import { SubBannerComponent } from './common/components/sub-banner/sub-banner.component';
 import { BodyComponent } from './common/components/body/body.component';
+import { CardCourseComponent } from './common/components/cards/card-course/card-course.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BodyComponent } from './common/components/body/body.component';
     MycoursesComponent,
     NotFoundComponent,
     SubBannerComponent,
-    BodyComponent
+    BodyComponent,
+    CardCourseComponent
   ],
   imports: [
     BrowserModule,

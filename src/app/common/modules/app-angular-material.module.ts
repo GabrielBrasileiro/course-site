@@ -6,6 +6,7 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         MatCheckboxModule,
         MatTabsModule,
         MatDialogModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        MatCardModule
     ],
     exports: [
         BrowserAnimationsModule, 
@@ -23,7 +25,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         MatCheckboxModule, 
         MatTabsModule, 
         MatDialogModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        MatCardModule
     ]
 })
 export class AppAngularMaterialModule { }

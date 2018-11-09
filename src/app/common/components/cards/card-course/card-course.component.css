@@ -1,0 +1,24 @@
+.example-card {
+    max-width: 200px;
+  }
+  
+  .center {
+    text-align: center;
+}
+
+button.card {
+    color: #ffffff;
+    margin: 0%;
+    border: none;
+    text-align: center;
+    outline: 0;
+    }
+    
+button.card:hover * {
+    cursor: pointer;    
+    background-color: rgb(231, 226, 226);
+    }
+
+button.card:active * {
+    background-color: rgb(197, 194, 194);
+}
