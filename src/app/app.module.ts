@@ -18,6 +18,7 @@ import { NotFoundComponent } from './common/components/not-found/not-found.compo
 import { SubBannerComponent } from './common/components/sub-banner/sub-banner.component';
 import { BodyComponent } from './common/components/body/body.component';
 import { CardCourseComponent } from './common/components/cards/card-course/card-course.component';
+import { ProgressBarComponent } from './common/components/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CardCourseComponent } from './common/components/cards/card-course/card-
     NotFoundComponent,
     SubBannerComponent,
     BodyComponent,
-    CardCourseComponent
+    CardCourseComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
