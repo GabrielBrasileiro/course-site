@@ -9,7 +9,14 @@ import { AppFooterComponent } from './common/components/footer/footer.component'
 
 import { AppBootstrapModule } from './common/modules/app-bootstrap.module';
 import { AppAngularMaterialModule } from './common/modules/app-angular-material.module';
-import { AppFirebaseModule } from './common/modules/app-firebase.module';
+
+import { CoreModule } from './common/services/core/core.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { environment } from 'src/environments/environment';
 
 import { TabComponent } from './common/components/tab/tab.component';
 import { LoginDialogComponent } from './common/dialogs/login-dialog/login-dialog.component';
@@ -35,14 +42,19 @@ import { ProgressBarComponent } from './common/components/progress-bar/progress-
     ProgressBarComponent
   ],
   imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     AppAngularMaterialModule,
     AppBootstrapModule,
-    AppFirebaseModule
+    AngularFireModule.initializeApp(environment.firebase, 'firestarter'),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    AngularFireFunctionsModule
   ],
-  entryComponents: [LoginDialogComponent],
-  providers: [],
+  entryComponents: [LoginDialogComponent],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,15 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { AuthService } from '../../services/auth/auth.service'
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-login-dialog',
   templateUrl: './login-dialog.component.html',
   styleUrls: ['./login-dialog.component.css']
 })
-export class LoginDialogComponent implements OnInit {
+export class LoginDialogComponent {
 
-  constructor() { }
+  constructor(
+    public auth: AuthService,
+    private router: Router,
+    public dialogRef: MatDialogRef<LoginDialogComponent>) { }
 
-  ngOnInit() {
+  async signInWithGoogle() {
+    await this.auth.googleLogin();
+    this.closeDialog();
+    return await this.afterSignIn();
+  }
+
+  private afterSignIn() {
+    return this.router.navigate(['/']);
+  }
+
+  private closeDialog() {
+    this.dialogRef.close();
   }
 
 }
