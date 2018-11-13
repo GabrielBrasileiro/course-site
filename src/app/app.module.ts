@@ -26,6 +26,7 @@ import { SubBannerComponent } from './common/components/sub-banner/sub-banner.co
 import { BodyComponent } from './common/components/body/body.component';
 import { CardCourseComponent } from './common/components/cards/card-course/card-course.component';
 import { ProgressBarComponent } from './common/components/progress-bar/progress-bar.component';
+import { UserOptionDialogComponent } from './common/components/user-option-dialog/user-option-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProgressBarComponent } from './common/components/progress-bar/progress-
     SubBannerComponent,
     BodyComponent,
     CardCourseComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    UserOptionDialogComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

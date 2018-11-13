@@ -24,7 +24,7 @@
   <ng-template #authenticated>
     <div class="text-color" *ngIf="auth.user | async as user">
       <h3 class="user-name" style="float: left">{{ user.displayName }}</h3>
-      <img id="user-options" class="rounded-circle" style="float: right" [src]="user.photoURL || 'http://placehold.it/35x35'" width=50px>
+      <img (click)="openUserDialog()" id="user-options" class="rounded-circle" style="float: right" [src]="user.photoURL || 'http://placehold.it/35x35'" width=50px>
     </div>
   </ng-template>
 
