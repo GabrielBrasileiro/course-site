@@ -30,6 +30,7 @@ import { ProgressBarComponent } from './common/components/progress-bar/progress-
 import { CourseDetailsComponent } from './common/components/course/course-details/course-details.component';
 import { CourseListComponent } from './common/components/course/course-list/course-list.component';
 import { CreateCourseComponent } from './common/components/course/create-course/create-course.component';
+import { UserOptionDialogComponent } from './common/components/user-option-dialog/user-option-dialog.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CreateCourseComponent } from './common/components/course/create-course/
     ProgressBarComponent,
     CourseDetailsComponent,
     CourseListComponent,
-    CreateCourseComponent
+    CreateCourseComponent,
+    UserOptionDialogComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
