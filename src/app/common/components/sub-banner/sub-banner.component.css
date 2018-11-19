@@ -4,6 +4,7 @@
     height: 400px;
     font-weight: 500;
     position: relative;
+    background-image: url("../../images/sub-banner-background.jpg")
 }
 
 .font {

@@ -1,0 +1,16 @@
+<div *ngIf="course">
+  <div>
+    <label>Name: </label> {{course.name}}
+  </div>
+  <div>
+    <label>Active: </label> {{course.active}}
+  </div>
+
+  <span class="button is-small btn-primary" *ngIf='course.active' (click)='updateActive(false)'>Inactive</span>
+
+  <span class="button is-small btn-primary" *ngIf='!course.active' (click)='updateActive(true)'>Active</span>
+
+  <span class="button is-small btn-danger" (click)='deleteCourse()'>Delete</span>
+
+  <hr/>
+</div>

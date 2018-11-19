@@ -7,6 +7,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { MatCardModule } from '@angular/material/card';
         MatTabsModule,
         MatDialogModule,
         MatFormFieldModule,
-        MatCardModule
+        MatCardModule, 
+        FormsModule
     ],
     exports: [
         BrowserAnimationsModule, 
@@ -26,7 +28,8 @@ import { MatCardModule } from '@angular/material/card';
         MatTabsModule, 
         MatDialogModule,
         MatFormFieldModule,
-        MatCardModule
+        MatCardModule,
+        FormsModule
     ]
 })
 export class AppAngularMaterialModule { }

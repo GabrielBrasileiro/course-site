@@ -16,6 +16,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { environment } from 'src/environments/environment';
 
 import { TabComponent } from './common/components/tab/tab.component';
@@ -26,6 +27,9 @@ import { SubBannerComponent } from './common/components/sub-banner/sub-banner.co
 import { BodyComponent } from './common/components/body/body.component';
 import { CardCourseComponent } from './common/components/cards/card-course/card-course.component';
 import { ProgressBarComponent } from './common/components/progress-bar/progress-bar.component';
+import { CourseDetailsComponent } from './common/components/course/course-details/course-details.component';
+import { CourseListComponent } from './common/components/course/course-list/course-list.component';
+import { CreateCourseComponent } from './common/components/course/create-course/create-course.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,10 @@ import { ProgressBarComponent } from './common/components/progress-bar/progress-
     SubBannerComponent,
     BodyComponent,
     CardCourseComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    CourseDetailsComponent,
+    CourseListComponent,
+    CreateCourseComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -52,6 +59,7 @@ import { ProgressBarComponent } from './common/components/progress-bar/progress-
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     AngularFireFunctionsModule
   ],
   entryComponents: [LoginDialogComponent],  
