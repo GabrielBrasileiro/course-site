@@ -8,6 +8,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatInputModule } from '@angular/material';
 
 @NgModule({
     imports: [
@@ -18,18 +22,26 @@ import { FormsModule } from '@angular/forms';
         MatTabsModule,
         MatDialogModule,
         MatFormFieldModule,
-        MatCardModule, 
-        FormsModule
+        MatCardModule,
+        FormsModule,
+        MatMenuModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatInputModule
     ],
     exports: [
-        BrowserAnimationsModule, 
-        MatButtonModule, 
-        MatCheckboxModule, 
-        MatTabsModule, 
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatTabsModule,
         MatDialogModule,
         MatFormFieldModule,
         MatCardModule,
-        FormsModule
+        FormsModule,
+        MatMenuModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatInputModule
     ]
 })
 export class AppAngularMaterialModule { }

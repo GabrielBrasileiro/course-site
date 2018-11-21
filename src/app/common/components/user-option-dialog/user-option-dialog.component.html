@@ -1,14 +1,5 @@
-<div class="example-user" style="width: 200px" >
-  <div class="planos">
-    <a href="">planos</a>
-  </div>
-  <div class="cartoes">
-    <a href="">cartões</a>
-  </div>
-  <div class="configuracoes">
-    <a href="">configurações</a>
-  </div>
-  <div class="sair">
-    <a href="">sair</a>
-  </div>
-</div>
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>

@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from "@angular/material";
 import { LoginDialogComponent } from '../../dialogs/login-dialog/login-dialog.component';
 import { AuthService } from '../../services/auth/auth.service';
 import { UserOptionDialogComponent } from '../user-option-dialog/user-option-dialog.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { UserOptionDialogComponent } from '../user-option-dialog/user-option-dia
 
 export class AppHeaderComponent {
 
-  constructor(public dialog: MatDialog, public auth: AuthService) { }
+  constructor(public dialog: MatDialog, public auth: AuthService, private router: Router) { }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
@@ -35,6 +36,14 @@ export class AppHeaderComponent {
 
   logout() {
     this.auth.signOut();
+  }
+
+  openMyCourses() {
+    this.router.navigate(["/my-courses"])
+  }
+
+  openUserSettings() {
+    console.log('Open user settings page');
   }
 
 }

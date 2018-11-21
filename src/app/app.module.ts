@@ -64,7 +64,7 @@ import { UserOptionDialogComponent } from './common/components/user-option-dialo
     AngularFireDatabaseModule,
     AngularFireFunctionsModule
   ],
-  entryComponents: [LoginDialogComponent],  
+  entryComponents: [LoginDialogComponent, UserOptionDialogComponent],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
