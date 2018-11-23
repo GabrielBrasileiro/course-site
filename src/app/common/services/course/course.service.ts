@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { Course } from '../../models/course';
+import { Constants } from '../../constants/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
 
-  private dbPath = '/courses';
+  private dbPath = Constants.COURSE_PATH;
 
   coursesRef: AngularFireList<Course> = null;
 

@@ -31,6 +31,14 @@ import { CourseDetailsComponent } from './common/components/course/course-detail
 import { CourseListComponent } from './common/components/course/course-list/course-list.component';
 import { CreateCourseComponent } from './common/components/course/create-course/create-course.component';
 import { UserOptionDialogComponent } from './common/components/user-option-dialog/user-option-dialog.component';
+import { UserDetailsFormComponent } from './common/components/forms/user-details-form/user-details-form.component';
+import { CourseFormComponent } from './common/components/forms/course-form/course-form.component';
+
+import { DefaultLayoutComponent } from './common/containers';
+
+const APP_CONTAINERS = [
+  DefaultLayoutComponent
+];
 
 @NgModule({
   declarations: [
@@ -48,7 +56,9 @@ import { UserOptionDialogComponent } from './common/components/user-option-dialo
     CourseDetailsComponent,
     CourseListComponent,
     CreateCourseComponent,
-    UserOptionDialogComponent
+    UserOptionDialogComponent,
+    UserDetailsFormComponent,
+    CourseFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -64,7 +74,7 @@ import { UserOptionDialogComponent } from './common/components/user-option-dialo
     AngularFireDatabaseModule,
     AngularFireFunctionsModule
   ],
-  entryComponents: [LoginDialogComponent, UserOptionDialogComponent],  
+  entryComponents: [LoginDialogComponent],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
