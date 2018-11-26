@@ -34,7 +34,22 @@ import { UserOptionDialogComponent } from './common/components/user-option-dialo
 import { UserDetailsFormComponent } from './common/components/forms/user-details-form/user-details-form.component';
 import { CourseFormComponent } from './common/components/forms/course-form/course-form.component';
 
-import { DefaultLayoutComponent } from './common/containers';
+import { DefaultLayoutComponent } from './containers';
+
+import { P404Component } from './views/error/404.component';
+import { P500Component } from './views/error/500.component';
+import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
+
+import {
+  AppAsideModule,
+  AppBreadcrumbModule,
+  AppHeaderModule,
+  AppFooterModule,
+  AppSidebarModule,
+} from '@coreui/angular';
+import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { ChartsModule } from 'ng2-charts';
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent
@@ -43,8 +58,7 @@ const APP_CONTAINERS = [
 @NgModule({
   declarations: [
     AppComponent,
-    AppHeaderComponent,
-    AppFooterComponent,
+    ...APP_CONTAINERS,
     TabComponent,
     LoginDialogComponent,
     MycoursesComponent,
@@ -58,7 +72,11 @@ const APP_CONTAINERS = [
     CreateCourseComponent,
     UserOptionDialogComponent,
     UserDetailsFormComponent,
-    CourseFormComponent
+    CourseFormComponent,
+    P404Component,
+    P500Component,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -72,9 +90,18 @@ const APP_CONTAINERS = [
     AngularFireStorageModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFireFunctionsModule
+    AngularFireFunctionsModule,
+    AppAsideModule,
+    AppBreadcrumbModule.forRoot(),
+    AppFooterModule,
+    AppHeaderModule,
+    AppSidebarModule,
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    ChartsModule
   ],
   entryComponents: [LoginDialogComponent],  
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
