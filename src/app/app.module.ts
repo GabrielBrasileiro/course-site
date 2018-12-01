@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-import { AppHeaderComponent } from './common/components/header/header.component';
-import { AppFooterComponent } from './common/components/footer/footer.component';
+// import { AppHeaderComponent } from './common/components/header/header.component';
+// import { AppFooterComponent } from './common/components/footer/footer.component';
 
 import { AppBootstrapModule } from './common/modules/app-bootstrap.module';
 import { AppAngularMaterialModule } from './common/modules/app-angular-material.module';
@@ -33,6 +31,13 @@ import { CreateCourseComponent } from './common/components/course/create-course/
 import { UserOptionDialogComponent } from './common/components/user-option-dialog/user-option-dialog.component';
 import { UserDetailsFormComponent } from './common/components/forms/user-details-form/user-details-form.component';
 import { CourseFormComponent } from './common/components/forms/course-form/course-form.component';
+import { MainMenuComponent } from './pages/main-menu/main-menu.component';
+
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+import { AppComponent } from './app.component';
 
 import { DefaultLayoutComponent } from './containers';
 
@@ -41,6 +46,10 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = { suppressScrollX: true };
+
+const APP_CONTAINERS = [DefaultLayoutComponent];
+
 import {
   AppAsideModule,
   AppBreadcrumbModule,
@@ -48,17 +57,44 @@ import {
   AppFooterModule,
   AppSidebarModule,
 } from '@coreui/angular';
-import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
-import { ChartsModule } from 'ng2-charts';
 
-const APP_CONTAINERS = [
-  DefaultLayoutComponent
-];
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
+  imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
+    AppRoutingModule,
+    AppAsideModule,
+    AppBreadcrumbModule.forRoot(),
+    AppFooterModule,
+    AppHeaderModule,
+    AppSidebarModule,
+    PerfectScrollbarModule,
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    ChartsModule,
+    CoreModule,
+    AppAngularMaterialModule,
+    AppBootstrapModule,
+    AngularFireModule.initializeApp(environment.firebase, 'firestarter'),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireFunctionsModule
+  ],
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
+    P404Component,
+    P500Component,
+    LoginComponent,
+    RegisterComponent,
+    MainMenuComponent,
     TabComponent,
     LoginDialogComponent,
     MycoursesComponent,
@@ -72,36 +108,13 @@ const APP_CONTAINERS = [
     CreateCourseComponent,
     UserOptionDialogComponent,
     UserDetailsFormComponent,
-    CourseFormComponent,
-    P404Component,
-    P500Component,
-    LoginComponent,
-    RegisterComponent
+    CourseFormComponent
   ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    AppAngularMaterialModule,
-    AppBootstrapModule,
-    AngularFireModule.initializeApp(environment.firebase, 'firestarter'),
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireAuthModule,
-    AngularFireDatabaseModule,
-    AngularFireFunctionsModule,
-    AppAsideModule,
-    AppBreadcrumbModule.forRoot(),
-    AppFooterModule,
-    AppHeaderModule,
-    AppSidebarModule,
-    BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
-    ChartsModule
-  ],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   entryComponents: [LoginDialogComponent],  
   bootstrap: [AppComponent]
 })
-
 export class AppModule { }

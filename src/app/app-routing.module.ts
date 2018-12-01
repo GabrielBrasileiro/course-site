@@ -1,33 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from 'src/app/app.component';
-import { MycoursesComponent } from 'src/app/common/components/mycourses/mycourses.component';
-import { NotFoundComponent } from 'src/app/common/components/not-found/not-found.component';
-import { BodyComponent } from 'src/app/common/components/body/body.component';
-
+// Import Containers
 import { DefaultLayoutComponent } from './containers';
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { MainMenuComponent } from './pages/main-menu/main-menu.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
-    component: BodyComponent
+    component: MainMenuComponent
   },
   {
-    path: 'my-courses',
-    component: MycoursesComponent
-  },
-  {
-    path: '**',
-    component: NotFoundComponent
-  },
-  {
-    path: '',
+    path: 'dashboard',
     redirectTo: 'dashboard',
     pathMatch: 'full',
   },
@@ -103,7 +92,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -4,6 +4,8 @@
     font-family: 'Montserrat';
     font-weight: 500;
     background-color: black;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .login-button {
