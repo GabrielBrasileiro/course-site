@@ -1,32 +1,43 @@
+<app-header>
+  <div>
+    <span class="logo-name">Site de Cursos</span>
+  </div>
+
+  <div class="center">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Search">
+    </form>
+  </div>
+
+  <div class="box">
+    <div *ngIf="auth.user | async; then authenticated else guest"></div>
+  </div>
+
+  <ng-template #guest class="box">
     <div>
-      <span class="logo-name">Site de Cursos</span>
+      <button mat-flat-button (click)="openDialog()" class="login-button">Login</button>
     </div>
+  </ng-template>
 
-    <div class="center">
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Search">
-      </form>
-    </div>
-
-    <div class="box">
-      <div *ngIf="auth.user | async; then authenticated else guest"></div>
-    </div>
-
-    <ng-template #guest class="box">
-      <div>
-        <button mat-flat-button (click)="openDialog()" class="login-button">Login</button>
-      </div>
-    </ng-template>
-
-    <ng-template #authenticated>
-      <div class="text-color" *ngIf="auth.user | async as user">
-        <h3 class="user-name" style="float: left">{{ user.displayName }}</h3>
-        <img [matMenuTriggerFor]="menu" id="user-options" class="rounded-circle" style="float: right" [src]="user.photoURL || 'http://placehold.it/35x35'"
-          width=50px>
-        <mat-menu #menu="matMenu">
+  <ng-template #authenticated>
+    <div class="text-color" *ngIf="auth.user | async as user">
+      <h3 class="user-name" style="float: left">{{ user.displayName }}</h3>
+      <img [matMenuTriggerFor]="menu" id="user-options" class="rounded-circle" style="float: right" [src]="user.photoURL || 'http://placehold.it/35x35'" width=50px>
+      <mat-menu #menu="matMenu">
           <button mat-menu-item (click)="openMyCourses()">Meus Cursos</button>
           <button mat-menu-item (click)="openUserSettings()">Configurações</button>
           <button mat-menu-item (click)="logout()">Logout</button>
         </mat-menu>
-      </div>
-    </ng-template>
+    </div>
+  </ng-template>
+</app-header>
+
+<app-sub-banner></app-sub-banner>
+
+<nav class="navbar navbar-dark bg-dark mt-5 fixed-bottom">
+  <div class="navbar-expand m-auto navbar-text">
+    Made by <a>Gabriel Brasileiro, Emerson Rocha</a> and <a>Lucas Duarte</a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

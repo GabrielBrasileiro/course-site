@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { LoginDialogComponent } from '../../dialogs/login-dialog/login-dialog.component';
 import { AuthService } from '../../services/auth/auth.service';
-import { UserOptionDialogComponent } from '../user-option-dialog/user-option-dialog.component';
+import { UserOptionDialogComponent } from '../../dialogs/user-option-dialog/user-option-dialog.component';
 import { Router } from '@angular/router';
 
 

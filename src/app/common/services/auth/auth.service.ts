@@ -11,10 +11,12 @@ import { switchMap } from 'rxjs/operators';
 import { NotifyService } from '../notify/notify.service';
 
 import { User } from '../../models/user';
+import * as firebase from 'firebase';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
+  private loggedInStatus = JSON.parse(localStorage.getItem('loggedIn') || 'false')
   user: Observable<User | null>;
 
   constructor(
@@ -32,6 +34,15 @@ export class AuthService {
         }
       })
     )
+  }
+  
+  public setLoggedIn(value: boolean) {
+    this.loggedInStatus = value
+    localStorage.setItem('loggedIn', 'true')
+  }
+
+  get isLoggedIn() {
+    return JSON.parse(localStorage.getItem('loggedIn') || this.loggedInStatus.toString())
   }
 
   googleLogin() {

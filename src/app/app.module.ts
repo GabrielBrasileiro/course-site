@@ -28,7 +28,7 @@ import { ProgressBarComponent } from './common/components/progress-bar/progress-
 import { CourseDetailsComponent } from './common/components/course/course-details/course-details.component';
 import { CourseListComponent } from './common/components/course/course-list/course-list.component';
 import { CreateCourseComponent } from './common/components/course/create-course/create-course.component';
-import { UserOptionDialogComponent } from './common/components/user-option-dialog/user-option-dialog.component';
+import { UserOptionDialogComponent } from './common/dialogs/user-option-dialog/user-option-dialog.component';
 import { UserDetailsFormComponent } from './common/components/forms/user-details-form/user-details-form.component';
 import { CourseFormComponent } from './common/components/forms/course-form/course-form.component';
 import { MainMenuComponent } from './pages/main-menu/main-menu.component';
@@ -114,7 +114,7 @@ import { AppRoutingModule } from './app-routing.module';
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],
-  entryComponents: [LoginDialogComponent],  
+  entryComponents: [LoginDialogComponent, UserOptionDialogComponent],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

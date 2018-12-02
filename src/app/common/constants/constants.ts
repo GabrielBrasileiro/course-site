@@ -10,4 +10,6 @@ export class Constants {
     public static get COURSE_PATH(): string { return '/courses' }
     public static get USER_PATH(): string { return '/users' }
 
+    public static get LOGGED_IN(): string { return 'loggedIn' } 
+
 } 

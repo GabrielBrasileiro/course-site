@@ -4,7 +4,7 @@ import { MatDialog, MatDialogConfig } from "@angular/material";
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/common/services/auth/auth.service';
 import { LoginDialogComponent } from 'src/app/common/dialogs/login-dialog/login-dialog.component';
-import { UserOptionDialogComponent } from 'src/app/common/components/user-option-dialog/user-option-dialog.component';
+import { UserOptionDialogComponent } from 'src/app/common/dialogs/user-option-dialog/user-option-dialog.component';
 
 @Component({
   selector: 'app-main-menu',
@@ -38,7 +38,7 @@ export class MainMenuComponent {
   }
 
   openMyCourses() {
-    this.router.navigate(["/my-courses"])
+    this.router.navigate(["/dashboard"])
   }
 
   openUserSettings() {
